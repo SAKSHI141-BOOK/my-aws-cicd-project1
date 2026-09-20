@@ -20,9 +20,9 @@ jobs:
           username: ec2-user
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            cd ~/my-aws-cicd-project
+            cd ~/my-aws-cicd-project1
             git fetch origin
             git reset --hard origin/main
             npm install
-            pm2 restart node-cicd-demo || pm2 start app.js --name "node-cicd-demo"
+            pm2 restart all|| pm2 start app.js --name "my-aws-cicd-project1"
             echo "Deployment completed!"
